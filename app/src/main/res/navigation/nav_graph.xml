@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment2">
+
+    <fragment
+        android:id="@+id/listFragment2"
+        android:name="com.example.petbeer.ListFragment"
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/action_listFragment2_to_beerContentFragment"
+            app:destination="@id/beerContentFragment" />
+        <action
+            android:id="@+id/action_listFragment2_to_beerCardFragment"
+            app:destination="@id/beerCardFragment" />
+        <action
+            android:id="@+id/action_listFragment2_to_sellFragment"
+            app:destination="@id/sellFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/beerContentFragment"
+        android:name="com.example.petbeer.BeerContentFragment"
+        android:label="beer_content_fragment"
+        tools:layout="@layout/beer_content_fragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="ammount"
+            app:argType="float" />
+        <argument
+            android:name="price05"
+            app:argType="float" />
+        <argument
+            android:name="price1"
+            app:argType="float" />
+        <argument
+            android:name="price15"
+            app:argType="float" />
+    </fragment>
+    <fragment
+        android:id="@+id/beerCardFragment"
+        android:name="com.example.petbeer.BeerCardFragment"
+        android:label="beer_card_fragment"
+        tools:layout="@layout/beer_card_fragment" >
+        <action
+            android:id="@+id/action_beerCardFragment_to_beerContentFragment"
+            app:destination="@id/beerContentFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/sellFragment"
+        android:name="com.example.petbeer.SellFragment"
+        android:label="fragment_sell"
+        tools:layout="@layout/fragment_sell" />
+</navigation>

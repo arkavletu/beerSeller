@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "8ad5009fbb83a410b353699276defabc",
+    "entities": [
+      {
+        "tableName": "beer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `ammount` REAL NOT NULL, `priceFor1` REAL NOT NULL, `priceFor0_5` REAL NOT NULL, `priceFor1_5` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ammount",
+            "columnName": "ammount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "priceFor1",
+            "columnName": "priceFor1",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "priceFor0_5",
+            "columnName": "priceFor0_5",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "priceFor1_5",
+            "columnName": "priceFor1_5",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8ad5009fbb83a410b353699276defabc')"
+    ]
+  }
+}
